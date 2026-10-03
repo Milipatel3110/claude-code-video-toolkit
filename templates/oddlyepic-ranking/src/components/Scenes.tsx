@@ -129,7 +129,16 @@ export const CtaScene: React.FC<{ tl: Timeline }> = ({ tl }) => {
             opacity: inT,
           }}
         >
-          {tl.question}
+          {/* keep vote ranges like "1–5?" from splitting across lines */}
+          {tl.question.split(/(\d+\s*[–-]\s*\d+\??)/).map((part, i) =>
+            i % 2 ? (
+              <span key={i} style={{ whiteSpace: 'nowrap' }}>
+                {part}
+              </span>
+            ) : (
+              part
+            ),
+          )}
         </div>
         <div style={{ marginTop: 46, display: 'flex', flexDirection: 'column', gap: 10, width: WIDTH - 2 * (SAFE.left + 90) }}>
           {tl.ranks.map((r, i) => {
