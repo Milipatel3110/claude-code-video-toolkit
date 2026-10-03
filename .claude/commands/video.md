@@ -44,6 +44,7 @@ Which template would you like to use?
   1. Sprint Review - internal demos, release videos
   2. Product Demo - marketing, launches, features
   3. Concept Explainer Short - vertical TikTok/Reels/Shorts explainers
+  4. OddlyEpic RankReel - 9:16 ranking Shorts with the OddlyEpic Meter
 ```
 → Proceed to New Project Flow
 
@@ -162,6 +163,7 @@ Which template would you like to use?
 | Sprint Review | Internal demos, release videos | title, overview, demo, split-demo, summary, credits |
 | Product Demo | Marketing, launches, features | title, problem, solution, demo, feature, stats, cta |
 | Concept Explainer Short | Vertical 9:16 TikTok/Reels/Shorts explainers | hook, concept cards (Ideogram), b-roll (LTX), recap, cta |
+| OddlyEpic RankReel | OddlyEpic 9:16 ranking Shorts (#5 → #1) | hook, title, rank-N … rank-1, cta |
 ```
 
 > **Concept Explainer Short is Python-based** (moviepy, no Remotion/npm). Its
@@ -169,6 +171,11 @@ Which template would you like to use?
 > (ideogram4/ltx2 from toolkit root) → `gen_vo.py` → `gen_captions.py` →
 > `build.py`. See `templates/concept-explainer-short/README.md`. Skip the
 > npm-install and brand.ts steps below; preview = open `out/short.mp4`.
+
+> **OddlyEpic RankReel → hand off to `/oddlyepic`.** It owns the whole flow
+> (trend-hunter → clip-scout → rights-gated footage → shorts-director →
+> `ranking.json` → `prepare.py` → render). When resuming a project whose
+> `template` is `oddlyepic-ranking`, also defer to `/oddlyepic`.
 
 **Brand Selection:**
 

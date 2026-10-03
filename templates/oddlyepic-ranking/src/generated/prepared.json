@@ -1,0 +1,8 @@
+{
+  "prepared": false,
+  "draft": true,
+  "sfx": false,
+  "hook": null,
+  "clips": {},
+  "gate": { "final": false, "issues": ["Not checked yet — run `npm run check`."] }
+}

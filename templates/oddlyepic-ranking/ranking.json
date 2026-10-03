@@ -1,0 +1,243 @@
+{
+  "_readme": "OddlyEpic RankReel input. Times are SOURCE-clip timestamps: seconds (12.4) or 'm:ss.s' ('0:12.4'). See README.md for every field. This file is a FORMAT SAMPLE with placeholder clips — replace it per Short.",
+  "title": "HOW DID THIS GET WORSE?",
+  "meter": {
+    "type": "chaos"
+  },
+  "hook": {
+    "fromRank": 1,
+    "at": null,
+    "seconds": 1.0
+  },
+  "titleSeconds": 1.0,
+  "cta": {
+    "question": null,
+    "seconds": 1.7
+  },
+  "loop": true,
+  "audio": {
+    "music": null,
+    "musicRights": null,
+    "musicVolume": 0.1,
+    "clipVolume": 1.0,
+    "sfx": true,
+    "sfxVolume": 0.5
+  },
+  "entries": [
+    {
+      "rank": 5,
+      "label": "QUESTIONABLE",
+      "description": "FORMAT SAMPLE — a small mistake that is clearly about to get worse",
+      "clip": {
+        "src": null,
+        "cutIn": 0,
+        "cutOut": 2.6
+      },
+      "payoffAt": 1.69,
+      "framing": {
+        "mode": "cover",
+        "focusX": 0.5,
+        "focusY": 0.45,
+        "zoom": 1
+      },
+      "captions": [
+        {
+          "at": 1.2,
+          "text": "this seems fine",
+          "emphasis": "fine"
+        }
+      ],
+      "rights": {
+        "status": "pending",
+        "route": null,
+        "riskTier": null,
+        "source": null,
+        "rightsholder": null,
+        "credit": null,
+        "evidence": null,
+        "scoutRef": null,
+        "safety": {
+          "noSeriousInjury": null,
+          "noDangerousViolence": null,
+          "noChildHumiliation": null,
+          "noDiscriminatoryImagery": null,
+          "noThirdPartyWatermarks": null,
+          "lowMonetizationRisk": null
+        }
+      }
+    },
+    {
+      "rank": 4,
+      "label": "UH OH",
+      "description": "FORMAT SAMPLE — the first moment the plan visibly fails",
+      "clip": {
+        "src": null,
+        "cutIn": 0,
+        "cutOut": 3.0
+      },
+      "payoffAt": 1.95,
+      "framing": {
+        "mode": "cover",
+        "focusX": 0.5,
+        "focusY": 0.45,
+        "zoom": 1
+      },
+      "captions": [
+        {
+          "at": 1.0,
+          "text": "oh.",
+          "emphasis": "oh."
+        }
+      ],
+      "rights": {
+        "status": "pending",
+        "route": null,
+        "riskTier": null,
+        "source": null,
+        "rightsholder": null,
+        "credit": null,
+        "evidence": null,
+        "scoutRef": null,
+        "safety": {
+          "noSeriousInjury": null,
+          "noDangerousViolence": null,
+          "noChildHumiliation": null,
+          "noDiscriminatoryImagery": null,
+          "noThirdPartyWatermarks": null,
+          "lowMonetizationRisk": null
+        }
+      }
+    },
+    {
+      "rank": 3,
+      "label": "COMMITTED",
+      "description": "FORMAT SAMPLE — they keep going anyway",
+      "clip": {
+        "src": null,
+        "cutIn": 0,
+        "cutOut": 3.2
+      },
+      "payoffAt": 2.08,
+      "framing": {
+        "mode": "cover",
+        "focusX": 0.5,
+        "focusY": 0.45,
+        "zoom": 1
+      },
+      "captions": [
+        {
+          "at": 1.4,
+          "text": "still going",
+          "emphasis": "still"
+        }
+      ],
+      "rights": {
+        "status": "pending",
+        "route": null,
+        "riskTier": null,
+        "source": null,
+        "rightsholder": null,
+        "credit": null,
+        "evidence": null,
+        "scoutRef": null,
+        "safety": {
+          "noSeriousInjury": null,
+          "noDangerousViolence": null,
+          "noChildHumiliation": null,
+          "noDiscriminatoryImagery": null,
+          "noThirdPartyWatermarks": null,
+          "lowMonetizationRisk": null
+        }
+      }
+    },
+    {
+      "rank": 2,
+      "label": "NO GOING BACK",
+      "description": "FORMAT SAMPLE — past the point of fixing it",
+      "clip": {
+        "src": null,
+        "cutIn": 0,
+        "cutOut": 3.6
+      },
+      "payoffAt": 2.34,
+      "framing": {
+        "mode": "cover",
+        "focusX": 0.5,
+        "focusY": 0.45,
+        "zoom": 1
+      },
+      "captions": [
+        {
+          "at": 1.0,
+          "text": "no brakes",
+          "emphasis": "no"
+        }
+      ],
+      "rights": {
+        "status": "pending",
+        "route": null,
+        "riskTier": null,
+        "source": null,
+        "rightsholder": null,
+        "credit": null,
+        "evidence": null,
+        "scoutRef": null,
+        "safety": {
+          "noSeriousInjury": null,
+          "noDangerousViolence": null,
+          "noChildHumiliation": null,
+          "noDiscriminatoryImagery": null,
+          "noThirdPartyWatermarks": null,
+          "lowMonetizationRisk": null
+        }
+      }
+    },
+    {
+      "rank": 1,
+      "label": "ABSOLUTE CHAOS",
+      "description": "FORMAT SAMPLE — total, harmless, glorious chaos",
+      "clip": {
+        "src": null,
+        "cutIn": 0,
+        "cutOut": 4.2
+      },
+      "payoffAt": 2.73,
+      "framing": {
+        "mode": "cover",
+        "focusX": 0.5,
+        "focusY": 0.45,
+        "zoom": 1
+      },
+      "captions": [
+        {
+          "at": 1.8,
+          "text": "how",
+          "emphasis": "how"
+        }
+      ],
+      "rights": {
+        "status": "pending",
+        "route": null,
+        "riskTier": null,
+        "source": null,
+        "rightsholder": null,
+        "credit": null,
+        "evidence": null,
+        "scoutRef": null,
+        "safety": {
+          "noSeriousInjury": null,
+          "noDangerousViolence": null,
+          "noChildHumiliation": null,
+          "noDiscriminatoryImagery": null,
+          "noThirdPartyWatermarks": null,
+          "lowMonetizationRisk": null
+        }
+      },
+      "replay": {
+        "at": 2.2,
+        "seconds": 1.2,
+        "rate": 0.5
+      }
+    }
+  ]
+}

@@ -195,6 +195,13 @@
       "status": "beta",
       "created": "2026-06-09",
       "updated": "2026-06-09"
+    },
+    "oddlyepic": {
+      "path": ".claude/commands/oddlyepic.md",
+      "description": "OddlyEpic ranking Shorts - concept → clip plan → rights-gated footage → director output → RankReel render (bridges oddlyepic-trend-hunter / clip-scout / shorts-director)",
+      "status": "beta",
+      "created": "2026-10-03",
+      "updated": "2026-10-03"
     }
   },
   "tools": {
@@ -999,6 +1006,14 @@
       "status": "beta",
       "created": "2026-06-09",
       "updated": "2026-06-09"
+    },
+    "oddlyepic-ranking": {
+      "path": "templates/oddlyepic-ranking/",
+      "description": "OddlyEpic RankReel — 9:16 ranking Shorts driven by ranking.json: the OddlyEpic Meter (9 presets), rank tags + reaction labels, captions, freeze/slowmo/replay/punch-in, safe zones, synthesized SFX, loop, CTA. prepare.py does FFmpeg trim/loudnorm and a rights/safety gate that blocks final renders of uncleared clips",
+      "stack": "remotion",
+      "status": "beta",
+      "created": "2026-10-03",
+      "updated": "2026-10-03"
     }
   },
   "transitions": {
@@ -1172,6 +1187,12 @@
       "description": "Digital Samba - European video conferencing platform",
       "created": "2025-12-09",
       "updated": "2025-12-09"
+    },
+    "oddlyepic": {
+      "path": "brands/oddlyepic/",
+      "description": "OddlyEpic - faceless internet-entertainment Shorts brand (ink/paper + per-video meter accent)",
+      "created": "2026-10-03",
+      "updated": "2026-10-03"
     }
   },
   "examples": {
