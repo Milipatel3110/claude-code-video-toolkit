@@ -1,0 +1,10 @@
+node_modules/
+out/
+.DS_Store
+# Raw + prepared footage never goes into git (rights are per-project, not per-repo)
+footage/*
+!footage/README.md
+public/clips/
+public/sfx/
+public/music/
+public/voiceover/

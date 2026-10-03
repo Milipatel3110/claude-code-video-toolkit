@@ -84,6 +84,9 @@ Marketing/product demo videos with dark tech aesthetic, scene-based composition 
 ### concept-explainer-short
 9:16 vertical concept-explainer shorts (TikTok/Reels/YouTube Shorts). **Python/moviepy, not Remotion** — the whole video derives from `scenes.json` (per-scene narration + visual asset). Pipeline: `gen_vo.py` (per-scene TTS via voiceover.py, clone or built-in, `--max-wpm` pacing clamp) → `gen_captions.py` (whisper word timing force-aligned to script text, needs `uv sync --extra whisper`) → `build.py` (audio-anchored composite: Ken Burns on stills, boomerang-looped clips, burned karaoke caption pills, ducked music). Renders at every stage — placeholder cards before assets, silent before audio. Visuals follow the FLUX/Ideogram/LTX split: Ideogram cards at `1440x2560` for anything text-bearing, LTX b-roll at `576x1024` for motion.
 
+### oddlyepic-ranking
+OddlyEpic RankReel — 9:16 ranking Shorts (#5 → #1) driven by a single `ranking.json`. Its signature is **the OddlyEpic Meter**: a top-band HUD that starts MAXED on the hook, rewinds under the title, snaps up at each rank's payoff and overloads at #1, so the loop is seamless. It has 9 meter presets (chaos, luck, skill, fail, plotTwist, satisfying, timing, confidence, dogDrama) plus custom. `prepare.py` does the FFmpeg trim/30fps/loudnorm, cuts the hook and synthesises a copyright-free SFX pack. It is also a **rights + content-safety gate**: `npm run render` refuses unless every clip is `cleared` with evidence and all safety checks are confirmed, and draft renders carry a DO NOT PUBLISH band. Use `/oddlyepic` for the guided flow, which bridges the oddlyepic-trend-hunter / clip-scout / shorts-director skills. The spec is in `templates/oddlyepic-ranking/README.md`.
+
 ## Brand Profiles
 
 Brands live in `brands/`. Each defines visual identity:

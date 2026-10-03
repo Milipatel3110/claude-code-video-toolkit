@@ -1,0 +1,41 @@
+{
+  "name": "OddlyEpic",
+  "description": "The internet gets interesting here. Faceless global entertainment: near-black ink, warm paper white, and a per-video meter accent (cold → hot). Heavy display type, mono HUD readouts. Never childish, never game-show.",
+  "version": "1.0.0",
+
+  "colors": {
+    "primary": "#FF3B1F",
+    "primaryLight": "#C8FF2E",
+    "textDark": "#F5F2EA",
+    "textMedium": "rgba(245, 242, 234, 0.62)",
+    "textLight": "rgba(245, 242, 234, 0.4)",
+    "bgLight": "#0A0A0D",
+    "bgDark": "#0A0A0D",
+    "bgOverlay": "rgba(10, 10, 13, 0.58)",
+    "divider": "rgba(245, 242, 234, 0.14)",
+    "shadow": "rgba(0, 0, 0, 0.45)"
+  },
+
+  "fonts": {
+    "primary": "\"Archivo Black\", \"Archivo\", system-ui, sans-serif",
+    "body": "\"Archivo\", system-ui, sans-serif",
+    "mono": "\"JetBrains Mono\", ui-monospace, monospace"
+  },
+
+  "spacing": { "xs": 8, "sm": 16, "md": 24, "lg": 48, "xl": 80, "xxl": 120 },
+  "borderRadius": { "sm": 8, "md": 14, "lg": 20 },
+
+  "typography": {
+    "h1": { "size": 128, "weight": 900 },
+    "h2": { "size": 104, "weight": 900 },
+    "h3": { "size": 58, "weight": 900 },
+    "body": { "size": 66, "weight": 800 },
+    "label": { "size": 28, "weight": 700, "letterSpacing": 3 }
+  },
+
+  "format": {
+    "template": "oddlyepic-ranking",
+    "aspect": "9:16",
+    "notes": "Meter presets and their accent colours live in templates/oddlyepic-ranking/src/config/meters.ts"
+  }
+}
