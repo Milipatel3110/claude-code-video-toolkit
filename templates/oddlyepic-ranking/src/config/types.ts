@@ -100,6 +100,8 @@ export interface Entry {
     src: string | null;
     cutIn: TimeValue;
     cutOut: TimeValue;
+    /** Optional pre-crop of the SOURCE in pixels, "w:h:x:y" — e.g. remove baked-in letterbox bars. Applied by prepare.py. */
+    crop?: string | null;
   };
   /** The moment the joke/payoff lands. Label + meter jump happen here. Default: 65% through. */
   payoffAt?: TimeValue;

@@ -204,10 +204,21 @@ def validate(cfg: dict) -> tuple[list[str], list[str]]:
 
 # --------------------------------------------------------------------------- media
 
-def encode(src: Path, start: float, end: float, dst: Path, meta: dict) -> None:
-    h = min(meta["height"], MAX_H)
-    w = int(round(meta["width"] * h / meta["height"] / 2) * 2)
-    vf = f"fps={FPS},scale={w}:{h}:flags=lanczos,format=yuv420p"
+def parse_crop(crop: str | None, meta: dict) -> tuple[str, int, int]:
+    """'w:h:x:y' (pixels of the source) → (ffmpeg filter prefix, width, height after crop)."""
+    if not crop:
+        return "", meta["width"], meta["height"]
+    w, h, x, y = (int(v) for v in str(crop).split(":"))
+    if w <= 0 or h <= 0 or x < 0 or y < 0 or x + w > meta["width"] or y + h > meta["height"]:
+        raise RuntimeError(f"clip.crop {crop} is outside the {meta['width']}x{meta['height']} source")
+    return f"crop={w}:{h}:{x}:{y},", w, h
+
+
+def encode(src: Path, start: float, end: float, dst: Path, meta: dict, crop: str | None = None) -> None:
+    pre, cw, ch = parse_crop(crop, meta)
+    h = min(ch, MAX_H)
+    w = int(round(cw * h / ch / 2) * 2)
+    vf = f"{pre}fps={FPS},scale={w}:{h}:flags=lanczos,format=yuv420p"
     cmd = ["ffmpeg", "-y", "-v", "error", "-ss", f"{start:.3f}", "-to", f"{end:.3f}", "-i", str(src)]
     if meta["audio"]:
         amap = ["-map", "0:v:0", "-map", "0:a:0", "-af", "loudnorm=I=-16:TP=-1.5:LRA=11,aresample=48000"]
@@ -299,6 +310,7 @@ def main() -> int:
             verdicts[e["rank"]] == "refused"
             or c.get("cutIn") != parse_time(clip.get("cutIn"))
             or c.get("cutOut") != parse_time(clip.get("cutOut"))
+            or c.get("crop") != clip.get("crop")
             or not (ROOT / "public" / c["file"]).exists()
         )
         if stale:
@@ -331,20 +343,21 @@ def main() -> int:
             if b > meta["duration"] + 0.05:
                 errors.append(f"#{rank}: cutOut {b}s is past the end of the source ({meta['duration']:.2f}s)")
                 continue
-            if min(meta["width"], meta["height"]) < 720:
-                warnings.append(f"#{rank}: source is {meta['width']}x{meta['height']} — soft when cropped to 9:16")
-            fp = fingerprint(src, a, b)
+            _, cw, ch = parse_crop(clip.get("crop"), meta)
+            if min(cw, ch) < 720 and (e.get("framing") or {}).get("mode") != "blurfill":
+                warnings.append(f"#{rank}: picture is {cw}x{ch} — soft when cropped to 9:16; prefer framing.mode 'blurfill'")
+            fp = fingerprint(src, a, b, clip.get("crop"))
             dst = CLIPS / f"rank{rank}.mp4"
             cached = state["clips"].get(key, {})
             if cached.get("fingerprint") == fp and dst.exists() and not args.force:
                 print(f"  #{rank}: cached")
             else:
                 print(f"  #{rank}: trimming {a:.2f}–{b:.2f}s + loudnorm …")
-                encode(src, a, b, dst, meta)
+                encode(src, a, b, dst, meta, clip.get("crop"))
             out = probe(dst)
             state["clips"][key] = {
                 "file": f"clips/rank{rank}.mp4", "seconds": round(out["duration"], 3),
-                "cutIn": a, "cutOut": b, "width": out["width"], "height": out["height"], "fingerprint": fp,
+                "cutIn": a, "cutOut": b, "crop": clip.get("crop"), "width": out["width"], "height": out["height"], "fingerprint": fp,
             }
             contact_sheet(dst, OUT / "review" / f"rank{rank}.jpg", out["duration"])
 
@@ -362,7 +375,7 @@ def main() -> int:
             src = (ROOT / hr["clip"]["src"]).resolve()
             dst = CLIPS / "hook.mp4"
             print(f"  hook: #{hr['rank']} {at:.2f}–{at + secs:.2f}s")
-            encode(src, at, at + secs, dst, probe(src))
+            encode(src, at, at + secs, dst, probe(src), hr["clip"].get("crop"))
             state["hook"] = {"file": "clips/hook.mp4", "seconds": round(probe(dst)["duration"], 3)}
         state["prepared"] = bool(state["clips"])
 

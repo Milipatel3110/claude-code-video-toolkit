@@ -75,7 +75,7 @@ Times are **source-clip timestamps** (what you read off the raw footage): `12.4`
     "rank": 5,
     "label": "QUESTIONABLE",                  // reaction/category label
     "description": "what the clip shows",     // shown on the placeholder until footage exists
-    "clip": { "src": "footage/rank5.mp4", "cutIn": "0:03.2", "cutOut": "0:06.0" },
+    "clip": { "src": "footage/rank5.mp4", "cutIn": "0:03.2", "cutOut": "0:06.0", "crop": null },  // crop "w:h:x:y" strips baked-in bars (find with ffmpeg cropdetect)
     "payoffAt": "0:05.1",                      // label + meter snap land here (default 65% through)
     "framing": { "mode": "cover", "focusX": 0.5, "focusY": 0.45, "zoom": 1 },  // or "blurfill" for wide shots
     "speed": 1,                                // constant playback rate
@@ -152,7 +152,7 @@ npm run render          # check + render out/rankreel.mp4 (refuses if not cleare
 npm run render:draft    # render with the DRAFT band (for internal review only)
 ```
 
-Re-run prepare whenever `clip.src`, `cutIn` or `cutOut` change (encodes are cached per clip). Other fields (labels, payoff, captions, framing, effects, meter) are picked up live.
+Re-run prepare whenever `clip.src`, `cutIn`, `cutOut` or `crop` change (encodes are cached per clip). Other fields (labels, payoff, captions, framing, effects, meter) are picked up live.
 
 The format previews at any stage: with no footage, each rank shows a placeholder card with the needed moment and its cut plan.
 

@@ -29,9 +29,9 @@ export const Framed: React.FC<{
         <OffthreadVideo
           {...common}
           muted
-          style={{ width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(38px) brightness(0.55) saturate(1.2)', transform: 'scale(1.2)' }}
+          style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', filter: 'blur(38px) brightness(0.55) saturate(1.2)', transform: 'scale(1.2)' }}
         />
-        <OffthreadVideo {...common} muted={muted} volume={volume} style={{ width: '100%', height: '100%', objectFit: 'contain' }} />
+        <OffthreadVideo {...common} muted={muted} volume={volume} style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'contain' }} />
       </AbsoluteFill>
     );
   }
