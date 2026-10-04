@@ -1,7 +1,7 @@
 {
   "name": "oddlyepic-ranking",
   "version": "1.0.0",
-  "description": "OddlyEpic RankReel — reusable 9:16 ranking Short format with the OddlyEpic Meter",
+  "description": "OddlyEpic RankReel \u2014 reusable 9:16 ranking Short format with the OddlyEpic Meter",
   "scripts": {
     "prepare-clips": "python3 prepare.py",
     "prepare-draft": "python3 prepare.py --draft",
@@ -10,7 +10,8 @@
     "render": "python3 prepare.py --check && remotion render RankReel out/rankreel.mp4",
     "render:draft": "remotion render RankReel out/rankreel-DRAFT.mp4",
     "render:preview": "remotion render RankReel out/preview.mp4 --scale=0.5",
-    "still": "remotion still RankReel out/frame.png --frame=60"
+    "still": "remotion still RankReel out/frame.png --frame=60",
+    "cover": "remotion still RankReel-Cover out/cover.jpg --image-format=jpeg --jpeg-quality=92"
   },
   "dependencies": {
     "@remotion/cli": "4.0.529",

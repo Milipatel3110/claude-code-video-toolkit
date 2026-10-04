@@ -23,5 +23,7 @@ This project uses the `oddlyepic-ranking` template. Read `README.md` for the ful
 4. Tune `payoffAt`, `framing.focusX/Y`, and effects live in Studio. Use the **RankReel-SafeZones** composition to check framing.
 5. User confirms rights per clip → update `rights` → `npm run check` → `npm run render`.
 6. Put `out/credits.txt` into the description. Keep `out/rights-report.md` with the project.
+7. Launch: run `npm run cover`, then copy `LAUNCH-TEMPLATE.md` to `LAUNCH.md` and fill it in: per-platform titles, captions,
+   hashtags, pinned comments, settings, first-hour actions and the 24h/72h metrics. The user uploads by hand.
 
 Effects (freeze/slowmo/replay/punchIn) are opt-in except at #1. Add them only where they improve the payoff.

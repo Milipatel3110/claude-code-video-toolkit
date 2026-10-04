@@ -88,6 +88,19 @@ Watch the full render once (or extract a frame strip) before calling it done. Up
 
 **Do not publish.** Offer `/publish` only if the user asks.
 
+## Step 6: Launch kit
+
+1. `npm run cover` → `out/cover.jpg`. Read the image and check that the #1 label is visible and survives a 4:5 grid crop.
+2. Copy `LAUNCH-TEMPLATE.md` to `LAUNCH.md` and fill every placeholder from the director output, `PUBLISHING.md` and
+   `out/credits.txt`:
+   - 3 YouTube titles (hook first, ≤100 characters), plus a description, pinned comment and settings
+   - an Instagram caption with 3–5 hashtags, a cover and a first comment
+   - a TikTok caption, cover and pinned comment
+   - the hypothesis being tested, plus repeat/retire criteria (from trend-hunter)
+3. Walk the user through the upload order (YouTube → Instagram → TikTok), the first-hour actions and claim handling.
+   **The user uploads by hand.** Only use `/publish` (YouTube API) if they explicitly ask.
+4. After 24h/72h, ask for the numbers and log them in `RESULTS.md`. Feed them into the next trend-hunter run.
+
 ## Guardrails
 
 - No paid APIs unless the user asks for one by name.

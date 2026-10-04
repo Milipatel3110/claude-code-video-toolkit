@@ -195,8 +195,8 @@ def validate(cfg: dict) -> tuple[list[str], list[str]]:
         warnings.append(f"estimated runtime {total:.0f}s — over the ~55s ceiling for this format")
     audio = cfg.get("audio") or {}
     if audio.get("music"):
-        if audio.get("musicRights") not in ("original-generated", "licensed", "authorized"):
-            errors.append("audio.music is set but audio.musicRights isn't original-generated / licensed / authorized")
+        if audio.get("musicRights") not in ("original-generated", "licensed", "authorized", "public-domain"):
+            errors.append("audio.music is set but audio.musicRights isn't original-generated / licensed / authorized / public-domain")
         if not (ROOT / "public" / audio["music"]).exists():
             errors.append(f"audio.music file public/{audio['music']} not found")
     return errors, warnings

@@ -144,7 +144,7 @@ export interface RankingConfig {
   audio: {
     /** Relative to public/, e.g. "music/bed.mp3". Must be original/licensed/authorized. */
     music?: string | null;
-    musicRights?: 'original-generated' | 'licensed' | 'authorized' | null;
+    musicRights?: 'original-generated' | 'licensed' | 'authorized' | 'public-domain' | null;
     musicVolume?: number;
     clipVolume?: number;
     sfx?: boolean;
